@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class MyArrayDemo {
@@ -123,5 +122,8 @@ public class MyArrayDemo {
         System.out.println(students.contains(new Student("10", 4))); // true
         // System.out.println(students.max()); // Student 3, 3.4
         System.out.println(Collections.max(students));
+
+        System.out.println(ArrayDemo.commonElements(new int[] { 10, 20, 30, 40 }, new int[] { 4, 10, 20, 34, 50 }));
+        // 10 20
     }
 }

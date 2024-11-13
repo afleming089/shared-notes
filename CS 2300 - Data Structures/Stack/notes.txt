@@ -1,0 +1,9 @@
+Stack last in first out
+Stack of operations
+Called push and pop
+
+Constructor makes a new empty Stack
+Observer: peek returns the top element of the stack.
+
+Abstract data type is how things are defined. Defines just one.
+Add java interfaces to control the data structure

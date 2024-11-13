@@ -1,14 +1,65 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class ArrayDemo {
-    static int[] commonElements(int[] nums1, int[] nums2) {
+    static ArrayList<Integer> commonElements(int[] nums1, int[] nums2) {
         // return the elements in both nums1 and in nums2
         // assume that there are no duplicates
         // commonElements([10,20,30,40], [20,40,50]) return [20, 40]
 
+        // O^2
         // int length = nums1.length <= nums2.length ? nums1.length : nums2.length;
+        // int cnt = 0;
+        // for (int i = 0; i < nums1.length; i++) {
+        // for (int j = 0; j < nums2.length; j++) {
+        // if (nums1[i] == nums2[j]) {
+        // cnt++;
+        // break;
+        // }
+        // }
+        // }
 
-        // for(int i = 0; i < length;)
+        // int[] newArr = new int[cnt];
+        // cnt = 0;
+        // for (int i = 0; i < nums1.length; i++) {
+        // for (int j = 0; j < nums2.length; j++) {
+        // if (nums1[i] == nums2[j]) {
+        // newArr[cnt++] = nums1[i];
+        // break;
+        // }
+        // }
+        // }
 
-        return nums1;
+        // return newArr;
+
+        // O^2
+        // ArrayList<Integer> newArr = new ArrayList<>();
+        // for (int i = 0; i < nums1.length; i++) {
+        // for (int j = 0; j < nums2.length; j++) {
+        // if (nums1[i] == nums2[j]) {
+        // newArr.add(nums1[i]);
+        // }
+        // }
+        // }
+
+        // can uses java array
+        // has binary search
+        // also has sort function
+
+        // O(n*log(n))
+        Arrays.sort(nums2);
+        ArrayList<Integer> newArr = new ArrayList<>();
+        for (int i = 0; i < nums1.length; i++) {
+            // for (int j = 0; j < nums2.length; j++) {
+            // if (nums1[i] == nums2[j]) {
+            // newArr.add(nums1[i]);
+            // }
+            if (ArrayDemo.binarySearch(nums2, nums1[i]) >= 0) {
+                newArr.add(nums1[i]);
+            }
+        }
+
+        return newArr;
     }
 
     static void displayArray(int[] nums) { // T(nums.length) = O(nums.length) == O(N)
